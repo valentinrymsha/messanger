@@ -11,7 +11,7 @@ class RegisterViewController: UIViewController {
 
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "logo")
+        imageView.image = UIImage(named: "person")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -38,7 +38,6 @@ class RegisterViewController: UIViewController {
                                      y: 0,
                                      width: 5,
                                      height: 0))
-        field.isSecureTextEntry = true
         field.leftViewMode = .always
         field.backgroundColor = .white
         return field
@@ -57,7 +56,6 @@ class RegisterViewController: UIViewController {
                                      y: 0,
                                      width: 5,
                                      height: 0))
-        field.isSecureTextEntry = true
         field.leftViewMode = .always
         field.backgroundColor = .white
         return field
@@ -103,7 +101,7 @@ class RegisterViewController: UIViewController {
     private let registerButton: UIButton = {
         let button = UIButton()
         button.setTitle("Register", for: .normal)
-        button.backgroundColor = .link
+        button.backgroundColor = .systemGreen
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 13
         button.layer.masksToBounds = true
@@ -133,6 +131,10 @@ class RegisterViewController: UIViewController {
         scrollView.addSubview(lastNameField)
         scrollView.addSubview(passwordField)
         scrollView.addSubview(registerButton)
+        
+        imageView.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapChangeProfilePic))
+        imageView.addGestureRecognizer(gesture)
     }
     
     override func viewDidLayoutSubviews() {
@@ -174,16 +176,27 @@ class RegisterViewController: UIViewController {
     
     @objc private func registerButtonTapped() {
         emailField.resignFirstResponder()
+        firstNameField.resignFirstResponder()
+        lastNameField.resignFirstResponder()
         passwordField.resignFirstResponder()
         
-        guard let email = emailField.text,
+        guard let firstName = firstNameField.text,
+              let lastName = lastNameField.text,
+              let email = emailField.text,
               let password = passwordField.text,
-              !email.isEmpty, !password.isEmpty,
+              !email.isEmpty,
+              !password.isEmpty,
+              !firstName.isEmpty,
+              !lastName.isEmpty,
               password.count >= 6,
               email.count  >= 6 else {
             alertUserLoginError()
             return
         }
+    }
+    
+    @objc private func didTapChangeProfilePic() {
+        print("photo changed")
     }
     
     func alertUserLoginError() {
