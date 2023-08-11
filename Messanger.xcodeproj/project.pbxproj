@@ -19,6 +19,7 @@
 		A7A535352A84234E0044F9EE /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A535342A84234E0044F9EE /* VideoPlayerViewController.swift */; };
 		A7A535382A8423AE0044F9EE /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A535372A8423AE0044F9EE /* NewConversationViewController.swift */; };
 		A7A5353B2A8423DB0044F9EE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5353A2A8423DB0044F9EE /* ProfileViewController.swift */; };
+		A7E1DA712A86058300565994 /* ExtensionsForSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E1DA702A86058300565994 /* ExtensionsForSwift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		A7A535342A84234E0044F9EE /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		A7A535372A8423AE0044F9EE /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		A7A5353A2A8423DB0044F9EE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A7E1DA702A86058300565994 /* ExtensionsForSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsForSwift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				A7662ED42A841DD900DF4023 /* AppDelegate.swift */,
 				A7662ED62A841DD900DF4023 /* SceneDelegate.swift */,
+				A7E1DA702A86058300565994 /* ExtensionsForSwift.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				A7A5352F2A8423030044F9EE /* LoginViewController.swift in Sources */,
 				A7A535312A84230C0044F9EE /* RegisterViewController.swift in Sources */,
 				A7A535382A8423AE0044F9EE /* NewConversationViewController.swift in Sources */,
+				A7E1DA712A86058300565994 /* ExtensionsForSwift.swift in Sources */,
 				A7662ED92A841DD900DF4023 /* ConversationsViewController.swift in Sources */,
 				A7A535352A84234E0044F9EE /* VideoPlayerViewController.swift in Sources */,
 				A7662ED52A841DD900DF4023 /* AppDelegate.swift in Sources */,
