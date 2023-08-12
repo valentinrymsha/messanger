@@ -8,7 +8,7 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "person")
@@ -35,9 +35,9 @@ class RegisterViewController: UIViewController {
         field.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).cgColor
         field.placeholder = "First name"
         field.leftView = UIView(frame: CGRect(x: 0,
-                                     y: 0,
-                                     width: 5,
-                                     height: 0))
+                                              y: 0,
+                                              width: 5,
+                                              height: 0))
         field.leftViewMode = .always
         field.backgroundColor = .white
         return field
@@ -53,9 +53,9 @@ class RegisterViewController: UIViewController {
         field.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).cgColor
         field.placeholder = "Last name"
         field.leftView = UIView(frame: CGRect(x: 0,
-                                     y: 0,
-                                     width: 5,
-                                     height: 0))
+                                              y: 0,
+                                              width: 5,
+                                              height: 0))
         field.leftViewMode = .always
         field.backgroundColor = .white
         return field
@@ -71,9 +71,9 @@ class RegisterViewController: UIViewController {
         field.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).cgColor
         field.placeholder = "Email Adress"
         field.leftView = UIView(frame: CGRect(x: 0,
-                                     y: 0,
-                                     width: 5,
-                                     height: 0))
+                                              y: 0,
+                                              width: 5,
+                                              height: 0))
         field.leftViewMode = .always
         field.backgroundColor = .white
         return field
@@ -89,9 +89,9 @@ class RegisterViewController: UIViewController {
         passwordField.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).cgColor
         passwordField.placeholder = "Password"
         passwordField.leftView = UIView(frame: CGRect(x: 0,
-                                     y: 0,
-                                     width: 5,
-                                     height: 0))
+                                                      y: 0,
+                                                      width: 5,
+                                                      height: 0))
         passwordField.isSecureTextEntry = true
         passwordField.leftViewMode = .always
         passwordField.backgroundColor = .white
@@ -116,8 +116,8 @@ class RegisterViewController: UIViewController {
         view.backgroundColor = .white
         
         registerButton.addTarget(self,
-                              action: #selector(registerButtonTapped),
-                              for: .touchUpInside)
+                                 action: #selector(registerButtonTapped),
+                                 for: .touchUpInside)
         
         emailField.delegate = self
         firstNameField.delegate = self
@@ -159,9 +159,9 @@ class RegisterViewController: UIViewController {
                                       height: 52)
         
         lastNameField.frame = CGRect(x: 30,
-                                  y: firstNameField.bot + 15,
-                                  width: scrollView.width - 60,
-                                  height: 52)
+                                     y: firstNameField.bot + 15,
+                                     width: scrollView.width - 60,
+                                     height: 52)
         
         passwordField.frame = CGRect(x: 30,
                                      y: lastNameField.bot + 10,
@@ -169,9 +169,9 @@ class RegisterViewController: UIViewController {
                                      height: 52)
         
         registerButton.frame = CGRect(x: 30,
-                                   y: passwordField.bot + 15,
-                                   width: scrollView.width - 60,
-                                   height: 52)
+                                      y: passwordField.bot + 15,
+                                      width: scrollView.width - 60,
+                                      height: 52)
     }
     
     @objc private func registerButtonTapped() {
@@ -217,6 +217,37 @@ extension RegisterViewController: UITextFieldDelegate {
             registerButtonTapped()
         }
         return true
+    }
+    
+}
+
+extension RegisterViewController: UIImagePickerControllerDelegate {
+    
+    func presentPhotoActionSheet() {
+        let actionSheet = UIAlertController(title: "Profile picture",
+                                            message: "How whould you like to set photo?",
+                                            preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cancel",
+                                            style: .cancel))
+        
+        actionSheet.addAction(UIAlertAction(title: "Take photo",
+                                            style: .default))
+        
+        actionSheet.addAction(UIAlertAction(title: "Choose photo",
+                                            style: .default,
+                                            handler: { _ in
+            
+                                                            }))
+        
+        present(actionSheet, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
     }
     
 }
